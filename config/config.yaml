@@ -1,0 +1,37 @@
+discovery-url: http://localhost:8080/auth/realms/master
+client-id: account
+client-secret: 790ee324-f4fa-49ce-8e22-a51610920d3e
+listen: 0.0.0.0:3000
+enable-refresh-tokens: true
+enable-logging: true
+enable-json-logging: true
+enable-encrypted-token: false
+no-redirects: false
+tls-cert:
+tls-private-key:
+tls-ca-certificate:
+redirection-url: http://localhost:3000
+encryption-key: 1234567890123456
+enable-session-cookies: true
+secure-cookie: false
+upstream-url: https://example.com
+upstream-keepalives: true
+skip-upstream-tls-verify: true
+scopes: []
+enable-security-filter: true
+headers:
+  myheader_name: my_header_value
+resources:
+  - uri: /hello
+    white-listed: true
+  - uri: /world
+    methods:
+      - GET
+    roles:
+      - admin
+cors-origins: []
+cors-headers: []
+cors-exposed-headers: []
+cors-methods: []
+cors-credentials: false
+cors-max-age: 1h
