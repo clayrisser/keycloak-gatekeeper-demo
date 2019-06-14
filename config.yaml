@@ -1,6 +1,6 @@
-discovery-url: http://localhost:8080/auth/realms/master
-client-id: account
-client-secret: 790ee324-f4fa-49ce-8e22-a51610920d3e
+discovery-url: http://localhost:8080/auth/realms/gatekeeper
+client-id: gatekeeper
+client-secret: '**********'
 listen: 0.0.0.0:3000
 enable-refresh-tokens: true
 enable-logging: true
@@ -28,7 +28,7 @@ resources:
     methods:
       - GET
     roles:
-      - admin
+      - world
 cors-origins: []
 cors-headers: []
 cors-exposed-headers: []

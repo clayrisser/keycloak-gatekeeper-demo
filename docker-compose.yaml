@@ -4,9 +4,9 @@ services:
   gatekeeper:
     image: keycloak/keycloak-gatekeeper
     network_mode: host
-    command: ['--config', '/config/config.yaml']
+    command: ['--config', '/config.yaml']
     volumes:
-      - ./config:/config
+      - ./config.yaml:/config.yaml
     ports:
       - 3000:3000
     depends_on:
@@ -15,6 +15,8 @@ services:
   keycloak:
     image: jboss/keycloak:latest
     network_mode: host
+    volumes:
+      - ./realm-export.json:/realm-export.json
     environment:
       DB_ADDR: localhost
       DB_DATABASE: postgres
@@ -22,6 +24,7 @@ services:
       DB_SCHEMA: public
       DB_USER: postgres
       DB_VENDOR: POSTGRES
+      KEYCLOAK_IMPORT: /realm-export.json
       KEYCLOAK_PASSWORD: pass
       KEYCLOAK_USER: admin
     ports:
