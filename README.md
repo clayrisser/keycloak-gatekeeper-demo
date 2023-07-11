@@ -4,6 +4,8 @@
 
 > secure an application with keycloak gatekeeper demo
 
+![](assets/keycloak-gatekeeper-demo.png)
+
 Please ★ this repo if you found it useful ★ ★ ★
 
 
